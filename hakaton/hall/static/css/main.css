@@ -1,0 +1,15 @@
+:root {
+  --container-padding: 50px;
+  --primary-color: #316AFF;
+  --light-color: #B8B8C6;
+  --dark-color: #2d3436;
+  --border-color: #E6EFF0;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+
+  font-family: Montserrat;
+  box-sizing: border-box;
+}

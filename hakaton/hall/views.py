@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+  return render(request, 'base.html')
+
+def news(request):
+  return render(request, 'baseNews.html')
