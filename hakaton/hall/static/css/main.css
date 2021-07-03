@@ -4,6 +4,35 @@
   --light-color: #B8B8C6;
   --dark-color: #2d3436;
   --border-color: #E6EFF0;
+  --header-height: 100px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+footer {
+  flex: 0 0 200px;
+}
+
+
+.dark {
+  background-color: rgb(58, 58, 58);
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: black;
 }
 
 * {
@@ -12,4 +41,10 @@
 
   font-family: Montserrat;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --container-padding: 10px;
+  }
 }

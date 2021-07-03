@@ -1,9 +1,9 @@
 .header {
   display: flex;
   justify-content: space-between;
+  height: var(--header-height);
   align-items: center;
-  padding: 25px var(--container-padding);
-
+  padding: 10px var(--container-padding);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -17,17 +17,25 @@
 
 /* Header navigation */
 
+.header .header-nav-wrapper .header-burger-menu {
+  display: none;
+}
+
+.header .header-nav-wrapper .header-burger-menu.active {
+  display: none;
+}
+
 .header .header-nav-wrapper .header-nav a {
   color: var(--light-color);
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px 10px;
-  margin: 0px 5px;
+  padding: 10px 30px;
   outline: none;
   font-weight: 500;
 }
 
-.header .header-nav-wrapper .header-nav a:hover, .header .header-nav-wrapper .header-nav a.active {
+.header .header-nav-wrapper .header-nav a:hover,
+.header .header-nav-wrapper .header-nav a.active {
   color: var(--primary-color);
   transition: 0.3s;
 }
@@ -36,24 +44,63 @@
   box-shadow: inset 0px 0px 0px 3px var(--primary-color);
 }
 
+/* Header logo */
+
+.header-logo {
+}
+
+.header-logo img {
+  width: 84px;
+  height: 64px;
+}
+
 /* Header search */
 
 .header-search-wrapper {
-
 }
 
 .header-search-wrapper .header-search-form {
-
 }
 
-.header-search-wrapper .header-search-form input[type='search'] {
+.header-search-wrapper .header-search-form input[type="search"] {
   padding: 10px 20px;
   padding-left: 45px;
   outline: none;
   border-radius: 5px;
   border: 1px solid var(--border-color);
   color: var(--dark-color);
-  background-image: url('/static/img/icons/search.svg');
+  background-image: url("/static/img/icons/search.svg");
   background-repeat: no-repeat;
   background-position: 10px center;
+  font-size: 14px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .header .header-nav-wrapper .header-burger-menu {
+    display: block;
+  }
+
+  .header .header-nav-wrapper .header-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 120%;
+    top: var(--header-height);
+    background: var(--dark-color);
+    transition: 0.3s;
+  }
+
+  .header .header-nav-wrapper .header-nav.active {
+    left: 0px;
+  }
+
+  .header-search-wrapper { width: 100%; margin: 0px 10px;}
+  .header-search-wrapper .header-search-form { width: 100%;}
+  .header-search-wrapper .header-search-form input[type="search"] {width: 100%;}
 }

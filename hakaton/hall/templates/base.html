@@ -13,6 +13,8 @@
   <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
@@ -20,27 +22,41 @@
 
 <body>
   <header class="header">
-    <div class="header-logo">
-      <img src="{% static 'img/favicon.png' %}" alt="">
-    </div>
+    <a href="{% url 'news' %}" class="header-logo">
+      <img src="{% static 'img/logo.png' %}" alt="">
+    </a>
     <div class="header-search-wrapper">
       <form method="GET" class="header-search-form">
         <input type="search" name="header-search" placeholder="Поиск по сайту...">
       </form>
     </div>
     <div class="header-nav-wrapper">
+      <div class="header-burger-menu">
+        <img src="{% static 'img/icons/menu.svg' %}" alt="">
+      </div>
       <nav class="header-nav">
-        <a href="" class="active">Новости</a>
+        <a href="{% url 'news' %}" class="active">Новости</a>
         <a href="">О нас</a>
         <a href="">Задать вопрос</a>
         <a href="">Войти</a>
       </nav>
     </div>
   </header>
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class='footer dark'>
+    <div class="footer-nav-wrapper">
+      <nav class='footer-nav'>
+        <a href="" class="dark">FAQ</a>
+        <a href="" class="dark">О нас</a>
+        <a href="" class="dark"><img class='connection' src="https://free-png.ru/wp-content/uploads/2020/04/VK_Blue_Logo_t-340x340.png"> Мы в ВК</a>
+        <a href="" class="dark"><img class='connection' src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"> Мы в инстаграмме</a>
+      </nav>
+    </div>
+  </footer>
 
-  {% block content %}{% endblock %}
-  <footer></footer>
-
+  <script src="/static/js/jquery.js"></script>
   <script src="/static/js/main.js"></script>
 </body>
 
