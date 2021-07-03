@@ -20,22 +20,36 @@
   color: white;
   font-size: 24px;
   font-weight: 600;
+  padding: 0px 25px;
+  background: rgba(0, 0, 0, 0.8)
 }
 
-.news-post-desc {
+.news-post-desc-wrapper {
   color: white;
   font-size: 14px;
   max-height: 180px;
   overflow: hidden;
+  padding: 10px 25px;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.6)
+}
+
+.news-post-desc-wrapper a {
+  color: #70a1ff;
+  text-decoration: underline;
 }
 
 .new-post-wrapper {
   width: 100%;
   height: 100%;
-  box-shadow: inset 0px 0px 100px 0px black;
+  box-shadow: inset 0px 0px 150px 50px black;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 25px;
+
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
 }
