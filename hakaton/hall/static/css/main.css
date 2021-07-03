@@ -1,10 +1,10 @@
 :root {
-  --container-padding: 50px;
+  --container-padding: 15%;
   --primary-color: #316AFF;
   --light-color: #B8B8C6;
   --dark-color: #2d3436;
   --border-color: #E6EFF0;
-  --header-height: 100px;
+  --header-height: 90px;
 }
 
 html {
@@ -41,6 +41,16 @@ footer {
 
   font-family: Montserrat;
   box-sizing: border-box;
+}
+
+.container {
+  padding: 90px var(--container-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+.upper-wrapper {
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1024px) {

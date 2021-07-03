@@ -3,15 +3,26 @@
 
 {% block content %}
 <div class="container">
+  <div class="upper-wrapper">
+    <div class="popular-posts-wrapper">
+      <div class="most-popular-post">
+        <div class="news-post" style="background-image: url({% static 'img/temp.jpg' %});">
+          <div class="new-post-wrapper">
+            <div class="news-post-title">Название поста</div>
+            <div class="news-post-desc-wrapper">
+              <span class="news-post-desc">Irure ad ipsum Lorem elit culpa ad anim adipisicing proident qui eiusmod. Nulla exercitation dolor laborum nisi exercitation nostrud reprehenderit exercitation culpa ullamco. Irure consequat culpa sunt eiusmod officia aliquip. Id do veniam culpa mollit mollit dolore culpa. Deserunt anim consectetur exercitation adipisicing irure ex dolor laborum adipisicing eu</span>
+              <span><a href="">Читать далее.</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="news-grid">
     {% for n in post_count %}
     <div class="news-post" style="background-image: url({% static 'img/temp.jpg' %});">
       <div class="new-post-wrapper">
         <div class="news-post-title">Название поста</div>
-        <div class="news-post-desc-wrapper">
-          <span class="news-post-desc">Irure ad ipsum Lorem elit culpa ad anim adipisicing proident qui eiusmod. Nulla exercitation dolor laborum nisi exercitation nostrud reprehenderit exercitation culpa ullamco. Irure consequat culpa sunt eiusmod officia aliquip. Id do veniam culpa mollit mollit dolore culpa. Deserunt anim consectetur exercitation adipisicing irure ex dolor laborum adipisicing eu</span>
-          <span><a href="">Читать далее.</a></span>
-        </div>
       </div>
     </div>
     {% endfor %}

@@ -1,16 +1,12 @@
-.container {
-  padding: var(--container-padding);
-}
-
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
 
 .news-post {
   width: 100%;
-  height: 350px;
+  height: 250px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -27,7 +23,6 @@
 .news-post-desc-wrapper {
   color: white;
   font-size: 14px;
-  max-height: 180px;
   overflow: hidden;
   padding: 10px 25px;
   transition: 0.3s;
@@ -51,5 +46,20 @@
   position: relative;
 }
 
-@media screen and (max-width: 1024px) {
+.popular-posts-wrapper {
+  display: flex;
+}
+
+.most-popular-post {
+  width: 50%;
+}
+
+.most-popular-post .news-post {
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

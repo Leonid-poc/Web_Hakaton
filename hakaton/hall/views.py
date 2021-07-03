@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def news(request):
-  return render(request, 'baseNews.html', context={'post_count': ['' for x in range(20)]})
+  return render(request, 'baseNews.html', context={'post_count': ['' for x in range(20)], 'popular_post_count': ['' for x in range(3)]})
