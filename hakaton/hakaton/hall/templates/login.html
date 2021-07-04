@@ -1,0 +1,27 @@
+{% extends 'baseWrappedPage.html' %}
+
+{% block title %} | Авторизация{% endblock %}
+
+{% block page-title %}Авторизация{% endblock %}
+
+{% block p-content %}
+
+<form method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.username.label_tag }}
+  {{ form.username }}
+  {{ form.password.label_tag }}
+  {{ form.password }}
+
+  {% if form.errors %}
+  <ul>
+    <li class="form_error">Вы ввели неправильный логин\пароль.</li>
+  </ul>
+  {% endif %}
+
+  <input type="submit" value="Войти">
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<p>Ещё нет аккаунта? <a href="{% url 'register' %}">Создайте его.</a></p>
+
+{% endblock %}

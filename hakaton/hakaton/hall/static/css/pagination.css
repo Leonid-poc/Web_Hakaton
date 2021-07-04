@@ -1,0 +1,24 @@
+.pagination {
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+.pagination-buttons {
+  display: flex;
+}
+
+.pagination-block {
+  padding: 10px 20px;
+  background: var(--dark-color);
+  color: white;
+}
+
+.pagination-block.current {
+  border-left: 1px solid #636e72;
+  border-right: 1px solid #636e72;
+}
+
+.pagination-block a {
+  font-weight: 600;
+  color: white;
+}

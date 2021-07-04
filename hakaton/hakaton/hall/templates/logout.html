@@ -1,0 +1,9 @@
+{% extends 'baseWrappedPage.html' %}
+
+{% block title %} | Выход{% endblock %}
+
+{% block page-title %}Выход{% endblock %}
+
+{% block p-content %}
+<p>Вы вышли из аккаунта. <a href="{% url 'login' %}">Войдёте снова?</a></p>
+{% endblock %}
