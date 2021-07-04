@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %} Читательский зал {% endblock %}</title>
+  <title>Читательский зал{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" href="{% static 'css/header.css' %}">
   <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
@@ -35,36 +35,24 @@
         <img src="{% static 'img/icons/menu.svg' %}" alt="">
       </div>
       <nav class="header-nav">
-        <a href="{% url 'news' %}" class="active">Новости</a>
-        <a href="">О нас</a>
-        <a href="">Задать вопрос</a>
-        <a href="">Войти</a>
+        <a href="{% url 'news' %}" class="{% if request.resolver_match.view_name == 'news' %}active{% endif %}">Новости</a>
+        <a href="{% url 'about' %}" class="{% if request.resolver_match.view_name == 'about' %}active{% endif %}">О нас</a>
+        <a href="{% url 'contact' %}" class="{% if request.resolver_match.view_name == 'contact' %}active{% endif %}">Задать вопрос</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'profile' pk=request.user.id %}" class="{% if request.resolver_match.view_name == 'profile' %}active{% endif %}">Личный кабинет</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="{% if request.resolver_match.view_name == 'login' %}active{% endif %}">Войти</a>
+        {% endif %}
       </nav>
     </div>
   </header>
   <main class="content">
-    {% block content %}{% endblock %}
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
   </main>
   <footer class='footer dark'>
-      <div class="footer-prevew">
-        <p>Reading Room of the Orenburg Region Archive</p>
-        <div class="footer-info">
-          <div class="footer-ask">
-            <a>Готовы начать?</a>
-            <a href="#" class="button">Войти</a>
-          </div>
-        </div>
-      </div>
-      
-     
-      
-      <nav class='footer-nav'>
-        <a href="" class="dark">FAQ</a>
-        <a href="" class="dark">О нас</a>
-        <a href="" class="dark"><img class='connection' src="https://free-png.ru/wp-content/uploads/2020/04/VK_Blue_Logo_t-340x340.png"> Мы в ВК</a>
-        <a href="" class="dark"><img class='connection' src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png"> Мы в Телеграмме</a>
-      </nav>
-    </div>
+    <h2>Footer</h2>
   </footer>
 
   <script src="/static/js/jquery.js"></script>

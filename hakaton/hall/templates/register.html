@@ -1,0 +1,41 @@
+{% extends 'baseWrappedPage.html' %}
+
+{% block title %} | Регистрация{% endblock %}
+
+{% block page-title %}Регистрация{% endblock %}
+
+{% block p-content %}
+
+<form method="POST" action="{% url 'register' %}">
+  {% csrf_token %}
+  {{ form.username.label_tag }}
+  {{ form.username }}
+  {{ form.first_name.label_tag }}
+  {{ form.first_name }}
+  {{ form.last_name.label_tag }}
+  {{ form.last_name }}
+  {{ form.middle_name.label_tag }}
+  {{ form.middle_name }}
+  {{ form.password.label_tag }}
+  {{ form.password }}
+  {{ form.email.label_tag }}
+  {{ form.email }}
+  <label for="">Дата рождения:</label>
+  <input type="date" name="birth_day">
+
+  {% if form.errors %}
+    {% for field, errors in form.errors.items %}
+    <ul>
+      {% for error in errors %}
+        <li class="form_error">{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  {% endif %}
+
+  <input type="submit" value="Зарегистрироваться">
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<p>Уже есть аккаунт? <a href="{% url 'login' %}">Войдите.</a></p>
+
+{% endblock %}

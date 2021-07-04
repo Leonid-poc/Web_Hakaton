@@ -1,0 +1,12 @@
+{% extends 'baseWrappedPage.html' %}
+
+{% block title %} | Связь с нами{% endblock %}
+
+{% block page-title %}Связь с нами{% endblock %}
+
+{% block p-content %}
+<form method="POST">
+  {{ form }}
+  <input type="submit" value="Спросить">
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'baseWrappedPage.html' %}
+
+{% block title %} | Профиль{% endblock %}
+
+{% block page-title %}Профиль{% endblock %}
+
+{% block p-content %}
+<div>
+  <strong>Логин: </strong><span>{{object.username}}</span>
+</div>
+<div>
+  <strong>Ф.И.О.: </strong><span>{{object.first_name}} {{object.last_name}} {{object.middle_name}}</span>
+</div>
+<div>
+  <strong>Email: </strong><span>{{object.email}}</span>
+</div>
+<div>
+  <strong>Дата рождения: </strong><span>{{object.birth_day}}</span>
+</div>
+<a href="{% url 'logout' %}">Выйти</a>
+{% endblock %}

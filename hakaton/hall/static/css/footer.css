@@ -1,3 +1,7 @@
+.footer {
+    margin-top: auto;
+}
+
 .connection {
     width: 16px;
     height: 16px;
@@ -5,40 +9,4 @@
 
 a {
     text-decoration: none;
-    font-family: arial black;
-}
-.footer{
-    background-color: #0a222a;
-    width: 95%;
-    height: 100px;
-    margin-left: 25px;
-    margin-right: 25px;
-    padding: 40px;
-    position: relative;
-    
-}
-.ready-btn{
-    background-color: aliceblue;
-    color: black;
-}
-p{
-    font-family: arial black;
-    font-size: 20pt;
-    padding: 12px;
-    margin: 10px, 0;
-    
-}
-.button {
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    
-}
-.footer-nav{
-    border-top: white;
 }

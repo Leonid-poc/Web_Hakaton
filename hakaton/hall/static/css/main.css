@@ -17,11 +17,8 @@ body {
   height: 100%;
 }
 
-.content {
-  flex: 1 0 auto;
-}
 footer {
-  flex: 0 0 200px;
+  flex: 0 0 100px;
 }
 
 
@@ -52,6 +49,75 @@ footer {
 .upper-wrapper {
   margin-bottom: 40px;
 }
+
+.wrapper {
+  margin: 20px 0px;
+}
+
+.page-title {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: white;
+}
+
+ol, ul {
+  padding-left: 25px;
+}
+
+p {
+  padding: 10px 0px;
+}
+
+.p-block {
+  margin: 20px 0px;
+}
+
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form input[type='text'], form input[type='date'], form input[type='submit'], form input[type='email'], form input[type='password'], form textarea {
+  border: none;
+  outline: none;
+  background: rgba(27, 156, 252, 0.1);
+  padding: 20px;
+  margin: 10px 5px;
+  font-size: 18px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+form input[type='submit'] {
+  background: rgba(254, 211, 48,1.0);
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.form_error {
+  color: red !important;
+}
+
+.post-detail-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-detail-image {
+  max-width: 100%;
+}
+
 
 @media screen and (max-width: 1024px) {
   :root {

@@ -28,8 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# AUTH_USER_MODEL = 'hall.models.User'
-
 
 # Application definition
 
@@ -40,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hakaton'
+    'hall'
 ]
+
+AUTH_USER_MODEL = 'hall.User'
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,7 +130,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'hall', 'static'),
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ROOT_EMAIL = 'dima.derkach2004@gmail.com'

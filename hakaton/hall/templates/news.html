@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+ | Новости
+{% endblock %}
+
+{% block content %}
+  <div class="news-grid">
+    {% for post in object_list %}
+    <a href="{% url 'newsDetail' pk=post.id %}" class="news-post" style="background-image: url({{post.image.url}});">
+      <div class="new-post-wrapper">
+        <div class="news-post-title">{{post.title}}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+{% endblock %}

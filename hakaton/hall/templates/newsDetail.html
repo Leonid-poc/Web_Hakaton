@@ -1,0 +1,14 @@
+{% extends 'baseWrappedPage.html' %}
+
+{% block title %} | {{object.title}}{% endblock %}
+
+{% block page-title %}{{object.title}}{% endblock %}
+
+{% block p-content %}
+<div class="post-detail-image-wrapper">
+  <img class="post-detail-image" src="{{object.image.url}}">
+</div>
+<p>
+  {{object.desc}}
+</p>
+{% endblock %}
